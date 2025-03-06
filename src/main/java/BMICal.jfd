@@ -9,6 +9,7 @@ new FormModel {
 		} ) {
 			name: "this"
 			"title": "BMI Calculator"
+			"background": new java.awt.Color( 255, 255, 255, 255 )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "Weight"
 				"text": "Weight"
@@ -59,13 +60,72 @@ new FormModel {
 			"size": new java.awt.Dimension( 410, 225 )
 		} )
 		add( new FormWindow( "javax.swing.JDialog", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {space :0:198:x}"
-			"$verticalGroup": "par l {space :0:169:x}"
+			"$horizontalGroup": "par l {seq {par l {seq l {space :::p, comp separator1::::301:x}, seq {par l {seq l {space :p:16:p, comp label4:::p::p}, seq l {space :p:71:p, par t {comp label5:::p::p, comp label6::t:p::p, comp label7::t:p::p, comp label8::t:p::p}, space :::p, comp separator2:::p:6:p, space u:::p, par l {comp label10:::p::p, comp label9:::p::p, comp label11::l:p::p, comp label12:::p::p}}}, space :0:85:x}}, space :::p}, seq l {space :p:49:p, comp label3:::p:223:p, space ::41:x}, seq t {space ::114:x, comp label1:::p::p, space :::p, comp label2:::p:99:p, space :p:55:p}}"
+			"$verticalGroup": "par l {seq t {space :p:14:p, comp label4:::p::p, par l {seq {space s:::p, par l {seq {comp label9:::p::p, space :::p, comp label10:::p::p, space :::p, comp label11:::p::p, space :::p, comp label12:::p::p}, seq {comp label5:::p::p, space :::p, comp label6:::p::p, space :::p, comp label7:::p::p, space :::p, comp label8:::p::p}}, space ::45:x}, seq t {space ::7:x, comp separator2:::p:105:p, space :p:33:p}}, comp separator1:::p::p, space s:::p, par b {comp label1::b:p::p, comp label2::b:p:22:p}, space :::p, comp label3:::p:21:p, space :p:19:p}}"
 		} ) {
 			name: "dialog1"
+			"title": "Your BMI"
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "BMI :"
+				"font": new java.awt.Font( "Segoe UI", 1, 16 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"foreground": sfield java.awt.Color blue
+				"font": new java.awt.Font( "Segoe UI", 1, 16 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label3"
+				"font": new java.awt.Font( "Segoe UI", 0, 14 )
+				"horizontalAlignment": 0
+			} )
+			add( new FormComponent( "javax.swing.JSeparator" ) {
+				name: "separator1"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label4"
+				"text": "BMI Values"
+				"font": new java.awt.Font( "Segoe UI", 1, 12 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label5"
+				"text": "Under-weight"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label6"
+				"text": "Normal"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label7"
+				"text": "Over-weight"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label8"
+				"text": "Obese"
+			} )
+			add( new FormComponent( "javax.swing.JSeparator" ) {
+				name: "separator2"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label9"
+				"text": "> 18.5"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label10"
+				"text": "18.5 - 24.9"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label11"
+				"text": "25.0 - 29.9"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label12"
+				"text": ">= 30.0"
+			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 135, 270 )
-			"size": new java.awt.Dimension( 200, 200 )
+			"size": new java.awt.Dimension( 315, 295 )
 		} )
 	}
 }

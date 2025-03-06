@@ -9,6 +9,10 @@ public class BMICal extends JFrame {
     String item;
     public static final String KG = "Kg";
     public static final String POUND = "Pound";
+    public static final String UNDER_WEIGHT = "Under-Weight";
+    public static final String NORMAL = "Normal";
+    public static final String OVER_WEIGHT = "Over-Weight";
+    public static final String OBESE = "Obese";
 
     public BMICal() {
         initComponents();
@@ -51,6 +55,32 @@ public class BMICal extends JFrame {
     }
 
     private void displayBMIValue(double bmi) {
+
+        label2.setText(String.format("%.2f",bmi));
+
+        if(bmi < 18.5){
+
+            label3.setText(UNDER_WEIGHT);
+            label3.setForeground(Color.PINK);
+            label2.setForeground(Color.PINK);
+
+        }else if(bmi >= 18.5 && bmi < 24.9){
+
+            label3.setText(NORMAL);
+            label3.setForeground(Color.GREEN);
+            label2.setForeground(Color.GREEN);
+
+        }else if(bmi >= 25.0 && bmi < 29.9){
+
+            label3.setText(OVER_WEIGHT);
+            label3.setForeground(Color.ORANGE);
+            label2.setForeground(Color.ORANGE);
+
+        }else{
+            label3.setText(OBESE);
+            label3.setForeground(Color.RED);
+            label2.setForeground(Color.RED);
+        }
 
         dialog1.setModalityType(Dialog.ModalityType.APPLICATION_MODAL);
         dialog1.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
@@ -156,9 +186,24 @@ public class BMICal extends JFrame {
         button1 = new JButton();
         button2 = new JButton();
         dialog1 = new JDialog();
+        label1 = new JLabel();
+        label2 = new JLabel();
+        label3 = new JLabel();
+        separator1 = new JSeparator();
+        label4 = new JLabel();
+        label5 = new JLabel();
+        label6 = new JLabel();
+        label7 = new JLabel();
+        label8 = new JLabel();
+        separator2 = new JSeparator();
+        label9 = new JLabel();
+        label10 = new JLabel();
+        label11 = new JLabel();
+        label12 = new JLabel();
 
         //======== this ========
         setTitle("BMI Calculator");
+        setBackground(Color.white);
         var contentPane = getContentPane();
 
         //---- Weight ----
@@ -247,17 +292,129 @@ public class BMICal extends JFrame {
 
         //======== dialog1 ========
         {
+            dialog1.setTitle("Your BMI");
             var dialog1ContentPane = dialog1.getContentPane();
+
+            //---- label1 ----
+            label1.setText("BMI :");
+            label1.setFont(new Font("Segoe UI", Font.BOLD, 16));
+
+            //---- label2 ----
+            label2.setForeground(Color.blue);
+            label2.setFont(new Font("Segoe UI", Font.BOLD, 16));
+
+            //---- label3 ----
+            label3.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+            label3.setHorizontalAlignment(SwingConstants.CENTER);
+
+            //---- label4 ----
+            label4.setText("BMI Values");
+            label4.setFont(new Font("Segoe UI", Font.BOLD, 12));
+
+            //---- label5 ----
+            label5.setText("Under-weight");
+
+            //---- label6 ----
+            label6.setText("Normal");
+
+            //---- label7 ----
+            label7.setText("Over-weight");
+
+            //---- label8 ----
+            label8.setText("Obese");
+
+            //---- label9 ----
+            label9.setText("> 18.5");
+
+            //---- label10 ----
+            label10.setText("18.5 - 24.9");
+
+            //---- label11 ----
+            label11.setText("25.0 - 29.9");
+
+            //---- label12 ----
+            label12.setText(">= 30.0");
 
             GroupLayout dialog1ContentPaneLayout = new GroupLayout(dialog1ContentPane);
             dialog1ContentPane.setLayout(dialog1ContentPaneLayout);
             dialog1ContentPaneLayout.setHorizontalGroup(
                 dialog1ContentPaneLayout.createParallelGroup()
-                    .addGap(0, 198, Short.MAX_VALUE)
+                    .addGroup(dialog1ContentPaneLayout.createSequentialGroup()
+                        .addGroup(dialog1ContentPaneLayout.createParallelGroup()
+                            .addGroup(dialog1ContentPaneLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(separator1, GroupLayout.DEFAULT_SIZE, 301, Short.MAX_VALUE))
+                            .addGroup(dialog1ContentPaneLayout.createSequentialGroup()
+                                .addGroup(dialog1ContentPaneLayout.createParallelGroup()
+                                    .addGroup(dialog1ContentPaneLayout.createSequentialGroup()
+                                        .addGap(16, 16, 16)
+                                        .addComponent(label4))
+                                    .addGroup(dialog1ContentPaneLayout.createSequentialGroup()
+                                        .addGap(71, 71, 71)
+                                        .addGroup(dialog1ContentPaneLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                            .addComponent(label5)
+                                            .addComponent(label6)
+                                            .addComponent(label7)
+                                            .addComponent(label8))
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(separator2, GroupLayout.PREFERRED_SIZE, 6, GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(dialog1ContentPaneLayout.createParallelGroup()
+                                            .addComponent(label10)
+                                            .addComponent(label9)
+                                            .addComponent(label11)
+                                            .addComponent(label12))))
+                                .addGap(0, 85, Short.MAX_VALUE)))
+                        .addContainerGap())
+                    .addGroup(dialog1ContentPaneLayout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(label3, GroupLayout.PREFERRED_SIZE, 223, GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(41, Short.MAX_VALUE))
+                    .addGroup(GroupLayout.Alignment.TRAILING, dialog1ContentPaneLayout.createSequentialGroup()
+                        .addContainerGap(114, Short.MAX_VALUE)
+                        .addComponent(label1)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(label2, GroupLayout.PREFERRED_SIZE, 99, GroupLayout.PREFERRED_SIZE)
+                        .addGap(55, 55, 55))
             );
             dialog1ContentPaneLayout.setVerticalGroup(
                 dialog1ContentPaneLayout.createParallelGroup()
-                    .addGap(0, 169, Short.MAX_VALUE)
+                    .addGroup(GroupLayout.Alignment.TRAILING, dialog1ContentPaneLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(label4)
+                        .addGroup(dialog1ContentPaneLayout.createParallelGroup()
+                            .addGroup(dialog1ContentPaneLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(dialog1ContentPaneLayout.createParallelGroup()
+                                    .addGroup(dialog1ContentPaneLayout.createSequentialGroup()
+                                        .addComponent(label9)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(label10)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(label11)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(label12))
+                                    .addGroup(dialog1ContentPaneLayout.createSequentialGroup()
+                                        .addComponent(label5)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(label6)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(label7)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(label8)))
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE))
+                            .addGroup(GroupLayout.Alignment.TRAILING, dialog1ContentPaneLayout.createSequentialGroup()
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                                .addComponent(separator2, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
+                                .addGap(33, 33, 33)))
+                        .addComponent(separator1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(dialog1ContentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                            .addComponent(label1)
+                            .addComponent(label2, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(label3, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+                        .addGap(19, 19, 19))
             );
             dialog1.pack();
             dialog1.setLocationRelativeTo(dialog1.getOwner());
@@ -276,5 +433,19 @@ public class BMICal extends JFrame {
     private JButton button1;
     private JButton button2;
     private JDialog dialog1;
+    private JLabel label1;
+    private JLabel label2;
+    private JLabel label3;
+    private JSeparator separator1;
+    private JLabel label4;
+    private JLabel label5;
+    private JLabel label6;
+    private JLabel label7;
+    private JLabel label8;
+    private JSeparator separator2;
+    private JLabel label9;
+    private JLabel label10;
+    private JLabel label11;
+    private JLabel label12;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
 }
