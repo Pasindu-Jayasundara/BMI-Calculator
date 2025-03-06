@@ -18,6 +18,7 @@ public class BMICal extends JFrame {
         initComponents();
 
         textField1.grabFocus();
+
     }
 
     private void clearBtn(ActionEvent e) {
@@ -217,6 +218,7 @@ public class BMICal extends JFrame {
         //======== this ========
         setTitle("BMI Calculator");
         setBackground(Color.white);
+        setIconImage(new ImageIcon("C:\\Users\\Asus\\OneDrive\\Desktop\\bmi_icon.png").getImage());
         var contentPane = getContentPane();
 
         //---- Weight ----

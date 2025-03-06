@@ -10,6 +10,7 @@ new FormModel {
 			name: "this"
 			"title": "BMI Calculator"
 			"background": new java.awt.Color( 255, 255, 255, 255 )
+			"iconImage": new com.jformdesigner.model.SwingIcon( 1, "C:\\Users\\Asus\\OneDrive\\Desktop\\bmi_icon.png" )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "Weight"
 				"text": "Weight"
