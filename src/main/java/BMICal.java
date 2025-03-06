@@ -16,6 +16,8 @@ public class BMICal extends JFrame {
 
     public BMICal() {
         initComponents();
+
+        textField1.grabFocus();
     }
 
     private void clearBtn(ActionEvent e) {
@@ -25,6 +27,8 @@ public class BMICal extends JFrame {
 
         comboBox1.setSelectedIndex(0);
         comboBox2.setSelectedIndex(0);
+
+        textField1.grabFocus();
 
     }
 
@@ -81,6 +85,15 @@ public class BMICal extends JFrame {
             label3.setForeground(Color.RED);
             label2.setForeground(Color.RED);
         }
+
+        dialog1.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosed(WindowEvent e) {
+                super.windowClosed(e);
+
+                clearBtn(null);
+            }
+        });
 
         dialog1.setModalityType(Dialog.ModalityType.APPLICATION_MODAL);
         dialog1.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
