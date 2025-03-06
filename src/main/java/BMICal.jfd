@@ -42,7 +42,7 @@ new FormModel {
 					selectedItem: "Select Type"
 					addElement( "Select Type" )
 					addElement( "Meters" )
-					addElement( "Intches" )
+					addElement( "Inches" )
 				}
 				"enabled": false
 			} )

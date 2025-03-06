@@ -240,7 +240,7 @@ public class BMICal extends JFrame {
         comboBox2.setModel(new DefaultComboBoxModel<>(new String[] {
             "Select Type",
             "Meters",
-            "Intches"
+            "Inches"
         }));
         comboBox2.setEnabled(false);
 
